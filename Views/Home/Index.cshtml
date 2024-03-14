@@ -1,0 +1,36 @@
+﻿@model string;
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <div>
+        <h1 class="m-4">Расписание на неделю:</h1>
+        <div class="d-flex align-items-center justify-content-center">
+            <table style="background: #A8A8A8; border: 1px; width:97%;" class="table table-bordered text-center justify-content-center align-items-center">
+                <thead>
+                    <tr>
+                        <th style="width:7%">День недели</th>
+                        <th>Начало смены</th>
+                        <th>Окончание смены</th>
+                        <th>Позиция</th>
+                    </tr>
+                </thead>
+                @using (WorkSchedulerContext db = new WorkSchedulerContext())
+                {
+                    var shifts = db.Schedules.Where(x => x.WorkerId == Convert.ToInt32(Model)).ToList();
+                    foreach (var shift in shifts)
+                    {
+                        <tr>
+                            <td>@shift.ShiftDay</td>
+                            <td>@shift.ShiftStart</td>
+                            <td>@shift.ShiftEnd</td>
+                            <td>@shift.ShiftRole</td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+    </div>
+</div>

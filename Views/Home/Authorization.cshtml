@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "_AuthorizationLayout";
+    ViewData["Title"] = "Авторизация";
+}
+
+<form class="d-flex align-items-center justify-content-center" asp-action="Authorization" method="post">
+    <div class="w-75 d-inline-block align-items-center justify-content-center">
+        <p class="d-flex mx-auto justify-content-center" style="color:red; font-size: 12px">@ViewBag.Enter</p>
+        <div class="d-flex">
+            <h5 class="me-1 pt-2">+7</h5>
+            <input placeholder="Номер телефона" style="font-size: 20px; font-weight:bold" class="w-100" required type="text" name="phoneNumber" />
+        </div>
+        <button class="d-flex mt-5 mx-auto w-25 justify-content-center align-items-center" type="submit">Войти</button>
+    </div>
+</form>

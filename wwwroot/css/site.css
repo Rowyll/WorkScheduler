@@ -1,0 +1,58 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css');
+
+html,
+body {
+    height: 100%
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+  margin-bottom: 60px;
+  background-color: #f1f1f1;
+}
+
+button {
+    width: 212px;
+    height: 54px;
+    border-radius: 15px;
+    background-color: #ACACAC;
+    border-width: 0;
+    font-size: 20px
+}
+
+a {
+    width: 212px;
+    height: 54px;
+    border-radius: 15px;
+    background-color: #ACACAC;
+    border-width: 0;
+    font-size: 20px;
+    color: black;
+    text-decoration: unset;
+}
+a:link, a:visited {
+    color:black !important;
+}
+
+.profile {
+    height: 100%;
+}
+
+th, td {
+    vertical-align: middle !important;
+}

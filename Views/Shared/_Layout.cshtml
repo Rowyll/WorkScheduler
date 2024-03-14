@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WorkScheduler</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WorkScheduler.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="d-inline-flex w-100 h-100">
+        <div style="background-color: #d9d9d9; width:259px; box-shadow: -15px 0px 50px black" class="text-center h-100">
+            <div class="my-5 d-inline-flex align-items-center justify-content-between">
+                <h4 style="color:#fc6505">W</h4><h4>ork</h4><h4 style="color:#13733b">S</h4><h4>cheduler</h4>
+            </div>
+            <div style="width:212px;" class="row mx-4 my-1">
+                <a href='@Url.Action("LoadSchedule", "Home")' class="mb-4 glyphicon glyphicon-user d-flex text-center align-items-center justify-content-center">Главная</a>
+                <a href='@Url.Action("EditPage", "Home")' class="mb-4 glyphicon glyphicon-user d-flex text-center align-items-center justify-content-center">Изменить</a>
+                <a href='@Url.Action("Profile", "Home")' class="glyphicon glyphicon-user d-flex text-center align-items-center justify-content-center">Профиль</a>
+                
+            </div>
+            <div class="d-flex position-absolute align-items-end justify-content-end m-4 bottom-0 mb-5">
+                <Button href="@Url.Action("Profile","Home")">О Сайте</Button>
+            </div>
+            
+        </div>
+        <div style="background-color: #D9D9D9; width:80%; height:90%; border-radius: 15px" class="m-auto">
+            <main>
+                @RenderBody()
+            </main>
+        </div>
+        
+        
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

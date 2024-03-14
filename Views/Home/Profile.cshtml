@@ -1,0 +1,22 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Профиль";
+}
+
+<div class="m-4">
+    <h1>Профиль:</h1>
+
+    @using (WorkSchedulerContext db = new WorkSchedulerContext())
+    {
+        <div class="mt-5">
+            <h5>ФИО: @db.Workers.Where(x => x.WorkerId == Convert.ToInt32(Model)).First().Fio</h5>
+            <h5>Дата рождения: @db.Workers.Where(x => x.WorkerId == Convert.ToInt32(Model)).First().BirthDay.ToShortDateString()</h5> 
+            <h5>Номер телефона: +7 @db.Workers.Where(x => x.WorkerId == Convert.ToInt32(Model)).First().PhoneNumber</h5>
+            <h5>Номер в ресторане: @db.Workers.Where(x => x.WorkerId == Convert.ToInt32(Model)).First().LocalCode</h5>
+            <h5>Номер сотрудника: @db.Workers.Where(x => x.WorkerId == Convert.ToInt32(Model)).First().GlobalCode</h5>
+        </div>
+        <div style="margin-bottom: 4% !important;" class="d-flex position-absolute align-items-end justify-content-end m-4 bottom-0">
+            <a href='@Url.Action("LeaveAccount", "Home")' class="glyphicon glyphicon-user d-flex text-center align-items-center justify-content-center">Выйти</a>
+        </div>
+    }
+</div>
